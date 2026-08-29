@@ -23,16 +23,15 @@ before exiting.
 
 ## Example
 
-The session below is the output of a real run with the input piped in:
+The session below is transcribed from a real interactive run, with `Hello World Foo` typed
+at the first prompt:
 
 ```
-$ printf 'Hello World Foo\n\n' | python3 acronymMaker.py
-Enter what you want to make into an acronym: Your new acronym is HWF
+$ python3 acronymMaker.py
+Enter what you want to make into an acronym: Hello World Foo
+Your new acronym is HWF
 Press 'Enter' to exit the program.
 ```
-
-When the program is run interactively instead, the typed phrase is echoed by the terminal
-after the prompt, and the acronym is printed on the following line.
 
 ## License
 
