@@ -1,12 +1,17 @@
-originalString = input("Enter what you want to make into an acronym: ")
+def makeAcronym(originalString):
+	words = originalString.split(" ")
 
-words = originalString.split(" ")
+	acronym = ""
 
-acronym = ""
+	for x in words:
+		acronym = acronym + x[:1]
 
-for x in words:
-	acronym = acronym + x[:1]
+	return acronym
 
-print("Your new acronym is %s" % acronym)
 
-input("Press 'Enter' to exit the program.")
+if __name__ == "__main__":
+	originalString = input("Enter what you want to make into an acronym: ")
+
+	print("Your new acronym is %s" % makeAcronym(originalString))
+
+	input("Press 'Enter' to exit the program.")
