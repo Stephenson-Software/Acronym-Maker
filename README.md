@@ -33,6 +33,14 @@ Your new acronym is HWF
 Press 'Enter' to exit the program.
 ```
 
+## Tests
+
+The test suite uses the standard library's `unittest`. Run it from the repository root:
+
+```
+python3 -m unittest discover -s tests -t . -v
+```
+
 ## License
 
 This project is licensed under the Stephenson Software Non-Commercial License
