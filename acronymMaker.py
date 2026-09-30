@@ -1,5 +1,5 @@
 def makeAcronym(originalString):
-	words = originalString.split(" ")
+	words = originalString.split()
 
 	acronym = ""
 

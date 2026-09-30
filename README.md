@@ -1,7 +1,8 @@
 # Acronym Maker
 
-Transforms your input into an acronym. The first character of each space-separated word is
-taken, in order, and the result is printed.
+Transforms your input into an acronym. The first character of each word is taken, in order, and
+the result is printed. Words are separated by any run of whitespace (spaces or tabs); leading
+and trailing whitespace is ignored.
 
 Case is preserved: each initial keeps whatever case it had in the input, so `hello World foo`
 becomes `hWf`, not `HWF`.
