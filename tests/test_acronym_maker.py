@@ -24,12 +24,14 @@ class TestAcronymMaker(unittest.TestCase):
 		self.assertEqual(makeAcronym(""), "")
 
 	def test_consecutive_spaces_do_not_raise(self):
-		# split(" ") yields an empty field between the spaces; ""[:1] is "".
 		self.assertEqual(makeAcronym("a  b"), "ab")
 
-	def test_tab_is_not_treated_as_a_separator(self):
-		# Characterizes the current split(" ") behavior tracked by #4.
-		self.assertEqual(makeAcronym("a\tb"), "a")
+	def test_tab_is_treated_as_a_separator(self):
+		# Regression guard for #4: split() splits on any whitespace, not only " ".
+		self.assertEqual(makeAcronym("a\tb"), "ab")
+
+	def test_leading_and_trailing_whitespace_is_ignored(self):
+		self.assertEqual(makeAcronym("  Hello\tWorld \n"), "HW")
 
 	def test_end_to_end_prompts_prints_acronym_and_exits_cleanly(self):
 		# Two newlines feed both input() calls; timeout guards against a hang.
