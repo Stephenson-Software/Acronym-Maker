@@ -14,4 +14,7 @@ if __name__ == "__main__":
 
 	print("Your new acronym is %s" % makeAcronym(originalString))
 
-	input("Press 'Enter' to exit the program.")
+	try:
+		input("Press 'Enter' to exit the program.")
+	except EOFError:
+		pass
