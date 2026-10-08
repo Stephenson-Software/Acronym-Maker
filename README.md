@@ -21,7 +21,8 @@ python3 acronymMaker.py
 
 The program prompts for a phrase, prints the acronym, then waits for one more `Enter`
 before exiting. If standard input ends first (for example, when the phrase is piped in), the
-program exits normally without waiting.
+program exits normally without waiting. If standard input ends before any phrase is entered, the
+program exits normally without printing an acronym.
 
 ## Example
 

@@ -68,6 +68,22 @@ class TestAcronymMaker(unittest.TestCase):
 			"Press 'Enter' to exit the program.",
 		)
 
+	def test_eof_at_first_prompt_exits_cleanly(self):
+		# Regression guard for #15: empty stdin exits normally without printing an acronym.
+		result = subprocess.run(
+			[sys.executable, scriptPath],
+			input="",
+			capture_output=True,
+			text=True,
+			timeout=10,
+		)
+		self.assertEqual(result.returncode, 0)
+		self.assertEqual(result.stderr, "")
+		self.assertEqual(
+			result.stdout,
+			"Enter what you want to make into an acronym: ",
+		)
+
 
 if __name__ == "__main__":
 	unittest.main()
