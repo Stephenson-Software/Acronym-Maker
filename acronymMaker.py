@@ -10,7 +10,10 @@ def makeAcronym(originalString):
 
 
 if __name__ == "__main__":
-	originalString = input("Enter what you want to make into an acronym: ")
+	try:
+		originalString = input("Enter what you want to make into an acronym: ")
+	except EOFError:
+		raise SystemExit
 
 	print("Your new acronym is %s" % makeAcronym(originalString))
 
