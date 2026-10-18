@@ -4,6 +4,10 @@ Transforms your input into an acronym. The first character of each word is taken
 the result is printed. Words are separated by any run of whitespace (spaces or tabs); leading
 and trailing whitespace is ignored.
 
+![A real Acronym Maker session turning "Portable Network Graphics" into "PNG"](docs/images/acronym-maker.gif)
+
+*A real session: `Portable Network Graphics` becomes `PNG`.*
+
 Case is preserved: each initial keeps whatever case it had in the input, so `hello World foo`
 becomes `hWf`, not `HWF`.
 
@@ -43,6 +47,10 @@ The test suite uses the standard library's `unittest`. Run it from the repositor
 ```
 python3 -m unittest discover -s tests -t . -v
 ```
+
+## How the screenshot was captured
+
+`docs/images/acronym-maker.gif` was recorded on 2026-10-18 from a real run of `python3 acronymMaker.py` (Python 3.12) with `Portable Network Graphics` typed at the prompt. The program was started in a pseudo-terminal, the input shown was typed into it by a script, and the recorded terminal output was rendered to an image with [pyte](https://github.com/selectel/pyte) and [Pillow](https://python-pillow.org/). Nothing in the output was edited; only the window frame was added.
 
 ## License
 
